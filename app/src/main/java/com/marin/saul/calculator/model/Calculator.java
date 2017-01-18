@@ -64,5 +64,8 @@ public class Calculator {
         return num1 + num2;
     }
 
-
+    public void clear(){
+        this.num1 = 0.0f;
+        this.num2 = 0.0f;
+    }
 }
