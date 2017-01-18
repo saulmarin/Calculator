@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.activity_main_number8)Button number8;
     @BindView(R.id.activity_main_number9)Button number9;
 
+    @BindView(R.id.activity_main_dot)Button buttonDot;
     @BindView(R.id.activity_main_add)Button buttonAdd;
     @BindView(R.id.activity_main_substrac)Button buttonSubstrac;
     @BindView(R.id.activity_main_multiply)Button buttonMultiply;
@@ -72,67 +73,15 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        /*number1.setOnClickListener(new View.OnClickListener() {
+        buttonDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                printNumber("1");
+                String actualText = resultText.getText().toString();
+                if (actualText.indexOf(".") < 0 ) {
+                    resultText.setText(resultText.getText().toString() + ".");
+                }
             }
         });
-
-        number2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("2");
-            }
-        });
-
-        number3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("3");
-            }
-        });
-
-        number4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("4");
-            }
-        });
-
-        number5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("5");
-            }
-        });
-
-        number6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("6");
-            }
-        });
-
-        number7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("7");
-            }
-        });
-
-        number8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("8");
-            }
-        });
-        number9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("9");
-            }
-        });*/
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
