@@ -133,7 +133,7 @@
         android:id="@+id/activity_main_multiply"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:text="*"
+        android:text="x"
         android:layout_below="@+id/activity_main_divide"
         android:layout_toRightOf="@+id/activity_main_number9"/>
 
@@ -142,7 +142,7 @@
         android:id="@+id/activity_main_substrac"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:text="-"
+        android:text="__"
         android:layout_below="@+id/activity_main_multiply"
         android:layout_toRightOf="@+id/activity_main_number9"/>
 

@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 // set operation to ADD
                 calculator.setOperation(CalculatorOperation.DIVIDE);
                 // clear screen
-                resultText.setText("");
+                resultText.setText("0");
             }
         });
 
@@ -212,6 +212,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void printNumber(String i) {
+        if (resultText.getText().equals("0")){
+            resultText.setText("");
+        }
         resultText.setText(resultText.getText() + i);
     }
 }
