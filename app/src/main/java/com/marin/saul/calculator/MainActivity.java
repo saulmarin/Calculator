@@ -51,14 +51,28 @@ public class MainActivity extends AppCompatActivity {
         calculator.clear();
         resultText.setText("0");
 
-        number0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("0");
-            }
-        });
+        Button[] numbers = {
+                number0,
+                number1,
+                number2,
+                number3,
+                number4,
+                number5,
+                number6,
+                number7,
+                number8,
+                number9,
+        };
+        for (final Button number: numbers) {
+            number.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    printNumber("" + number.getText());
+                }
+            });
+        }
 
-        number1.setOnClickListener(new View.OnClickListener() {
+        /*number1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 printNumber("1");
@@ -118,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 printNumber("9");
             }
-        });
+        });*/
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
