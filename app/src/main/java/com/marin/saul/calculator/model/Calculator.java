@@ -26,7 +26,7 @@ public class Calculator {
     }
 
     public void calculate(int num1, int num2, CalculatorOperation operation){
-        int result;
+        float result;
         switch(operation){
             case NONE:
                 break;
@@ -45,22 +45,22 @@ public class Calculator {
         }
     }
 
-    private int divide(int num1, int num2) {
+    private float divide(float num1, float num2) {
         if (num2 == 0){
             return -1;
         }
         return num1/num2;
     }
 
-    private int multiply(int num1, int num2) {
+    private float multiply(float num1, float num2) {
         return num1 * num2;
     }
 
-    private int substrac(int num1, int num2) {
+    private float substrac(float num1, float num2) {
         return num1 - num2;
     }
 
-    private int add(int num1, int num2) {
+    private float add(float num1, float num2) {
         return num1 + num2;
     }
 
