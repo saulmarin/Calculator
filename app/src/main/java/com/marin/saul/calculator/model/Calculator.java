@@ -11,6 +11,15 @@ public class Calculator {
     public float num1;
     public float num2;
     public CalculatorOperation operation;
+    public float mem1;
+
+    public float getMem1() {
+        return mem1;
+    }
+
+    public void setMem1(float mem1) {
+        this.mem1 = mem1;
+    }
 
     public float getNum1() {
         return num1;
@@ -36,8 +45,8 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public void calculate(int num1, int num2, CalculatorOperation operation){
-        float result;
+    public float calculate(float num1, float num2, CalculatorOperation operation){
+        float result = 0;
         switch(operation){
             case NONE:
                 break;
@@ -54,6 +63,7 @@ public class Calculator {
                 result = divide(num1,num2);
                 break;
         }
+        return result;
     }
 
     private float divide(float num1, float num2) {

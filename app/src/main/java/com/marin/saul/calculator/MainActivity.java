@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.marin.saul.calculator.model.Calculator;
+import com.marin.saul.calculator.model.CalculatorOperation;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.activity_main_divide)Button buttonDivide;
     @BindView(R.id.activity_main_equal)Button buttonEqual;
     @BindView(R.id.activity_main_ce)Button buttonCe;
+    @BindView(R.id.activity_main_m_in)Button buttonMin;
+    @BindView(R.id.activity_main_m_out)Button buttonMout;
 
 
 
@@ -41,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        Calculator calculator = new Calculator();
+        final Calculator calculator = new Calculator();
         calculator.clear();
+        resultText.setText("0");
 
         number0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,6 +114,99 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 printNumber("9");
+            }
+        });
+
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // take actual text and save it to num1
+                float floatResult = Float.parseFloat(resultText.getText().toString());
+                calculator.setNum1(floatResult);
+                // set operation to ADD
+                calculator.setOperation(CalculatorOperation.ADD);
+                // clear screen
+                resultText.setText("0");
+            }
+        });
+
+        buttonSubstrac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // take actual text and save it to num1
+                float floatResult = Float.parseFloat(resultText.getText().toString());
+                calculator.setNum1(floatResult);
+                // set operation to ADD
+                calculator.setOperation(CalculatorOperation.SUBSTRAC);
+                // clear screen
+                resultText.setText("0");
+            }
+        });
+
+        buttonMultiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // take actual text and save it to num1
+                float floatResult = Float.parseFloat(resultText.getText().toString());
+                calculator.setNum1(floatResult);
+                // set operation to ADD
+                calculator.setOperation(CalculatorOperation.MULTIPLY);
+                // clear screen
+                resultText.setText("0");
+            }
+        });
+
+        buttonDivide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // take actual text and save it to num1
+                float floatResult = Float.parseFloat(resultText.getText().toString());
+                calculator.setNum1(floatResult);
+                // set operation to ADD
+                calculator.setOperation(CalculatorOperation.DIVIDE);
+                // clear screen
+                resultText.setText("");
+            }
+        });
+
+        buttonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // take actual text and save it to num2
+                float floatResult = Float.parseFloat(resultText.getText().toString());
+                calculator.setNum2(floatResult);
+
+                //  Execute operation
+                float finalResult;
+                finalResult = calculator.calculate(calculator.getNum1(), calculator.getNum2(), calculator.getOperation());
+
+                // show result
+                resultText.setText("" + finalResult);
+            }
+        });
+
+        buttonCe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // clears calculator
+                calculator.clear();
+                resultText.setText("0");
+            }
+        });
+
+        buttonMin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                float floatResult = Float.parseFloat(resultText.getText().toString());
+                calculator.setMem1(floatResult);
+            }
+        });
+
+        buttonMout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                calculator.setNum1(calculator.getMem1());
+                resultText.setText("" + calculator.getNum1());
             }
         });
     }

@@ -17,7 +17,7 @@
         android:layout_height="100dp"
         android:background="#ddd"
         android:textSize="40dp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         tools:text="654"
         android:gravity="bottom|right"
         android:padding="20dp"
@@ -25,6 +25,24 @@
         />
 
     <Button
+        android:textSize="22dp"
+        android:id="@+id/activity_main_m_in"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/activity_main_result"
+        android:text="> M"/>
+
+    <Button
+        android:textSize="22dp"
+        android:id="@+id/activity_main_m_out"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/activity_main_result"
+        android:layout_toRightOf="@id/activity_main_m_in"
+        android:text="M >"/>
+
+    <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number7"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -32,6 +50,7 @@
         android:text="7"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number8"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -40,6 +59,7 @@
         android:text="8"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number9"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -48,6 +68,7 @@
         android:text="9"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number4"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -55,6 +76,7 @@
         android:text="4"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number5"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -63,6 +85,7 @@
         android:text="5"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number6"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -71,6 +94,7 @@
         android:text="6"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number1"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -78,6 +102,7 @@
         android:text="1"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number2"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -86,6 +111,7 @@
         android:text="2"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number3"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -94,6 +120,7 @@
         android:text="3"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_divide"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -102,6 +129,7 @@
         android:layout_toRightOf="@+id/activity_main_number9"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_multiply"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -110,6 +138,7 @@
         android:layout_toRightOf="@+id/activity_main_number9"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_substrac"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -118,6 +147,7 @@
         android:layout_toRightOf="@+id/activity_main_number9"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_add"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -126,6 +156,7 @@
         android:layout_toRightOf="@+id/activity_main_number9"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_number0"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -133,6 +164,7 @@
         android:text="0"/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_equal"
         android:layout_width="140dp"
         android:layout_height="70dp"
@@ -141,6 +173,7 @@
         android:text="="/>
 
     <Button
+        android:textSize="22dp"
         android:id="@+id/activity_main_ce"
         android:layout_width="140dp"
         android:layout_height="70dp"
