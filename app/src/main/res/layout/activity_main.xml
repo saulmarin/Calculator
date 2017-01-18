@@ -8,10 +8,143 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/colorPrimary"
     tools:context="com.marin.saul.calculator.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/activity_main_result"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#ddd"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:text="654"
+        android:gravity="bottom|right"
+        android:padding="20dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:id="@+id/activity_main_number7"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_ce"
+        android:text="7"/>
+
+    <Button
+        android:id="@+id/activity_main_number8"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_ce"
+        android:layout_toRightOf="@+id/activity_main_number7"
+        android:text="8"/>
+
+    <Button
+        android:id="@+id/activity_main_number9"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_ce"
+        android:layout_toRightOf="@+id/activity_main_number8"
+        android:text="9"/>
+
+    <Button
+        android:id="@+id/activity_main_number4"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_number7"
+        android:text="4"/>
+
+    <Button
+        android:id="@+id/activity_main_number5"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_number8"
+        android:layout_toRightOf="@+id/activity_main_number7"
+        android:text="5"/>
+
+    <Button
+        android:id="@+id/activity_main_number6"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_number9"
+        android:layout_toRightOf="@+id/activity_main_number8"
+        android:text="6"/>
+
+    <Button
+        android:id="@+id/activity_main_number1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_number4"
+        android:text="1"/>
+
+    <Button
+        android:id="@+id/activity_main_number2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_number5"
+        android:layout_toRightOf="@+id/activity_main_number1"
+        android:text="2"/>
+
+    <Button
+        android:id="@+id/activity_main_number3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_number6"
+        android:layout_toRightOf="@+id/activity_main_number2"
+        android:text="3"/>
+
+    <Button
+        android:id="@+id/activity_main_divide"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:text="/"
+        android:layout_below="@+id/activity_main_ce"
+        android:layout_toRightOf="@+id/activity_main_number9"/>
+
+    <Button
+        android:id="@+id/activity_main_multiply"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:text="*"
+        android:layout_below="@+id/activity_main_divide"
+        android:layout_toRightOf="@+id/activity_main_number9"/>
+
+    <Button
+        android:id="@+id/activity_main_substrac"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:text="-"
+        android:layout_below="@+id/activity_main_multiply"
+        android:layout_toRightOf="@+id/activity_main_number9"/>
+
+    <Button
+        android:id="@+id/activity_main_add"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:text="+"
+        android:layout_below="@+id/activity_main_substrac"
+        android:layout_toRightOf="@+id/activity_main_number9"/>
+
+    <Button
+        android:id="@+id/activity_main_number0"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_number1"
+        android:text="0"/>
+
+    <Button
+        android:id="@+id/activity_main_equal"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_number2"
+        android:layout_toRightOf="@+id/activity_main_number0"
+        android:text="="/>
+
+    <Button
+        android:id="@+id/activity_main_ce"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/activity_main_result"
+        android:text="CE"
+        android:layout_toRightOf="@+id/activity_main_number8"/>
 </RelativeLayout>
