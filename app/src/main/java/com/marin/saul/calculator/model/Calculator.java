@@ -24,4 +24,8 @@ public class Calculator {
     public void setNum2(float num2) {
         this.num2 = num2;
     }
+
+    public void calculate(int num1, int num2, CalculatorOperation operation){
+
+    }
 }
