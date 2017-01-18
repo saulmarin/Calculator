@@ -1,5 +1,7 @@
 package com.marin.saul.calculator.model;
 
+import static com.marin.saul.calculator.model.CalculatorOperation.NONE;
+
 /**
  * Created by usuario on 18/01/2017.
  */
@@ -8,6 +10,7 @@ public class Calculator {
 
     public float num1;
     public float num2;
+    public CalculatorOperation operation;
 
     public float getNum1() {
         return num1;
@@ -23,6 +26,14 @@ public class Calculator {
 
     public void setNum2(float num2) {
         this.num2 = num2;
+    }
+
+    public CalculatorOperation getOperation() {
+        return operation;
+    }
+
+    public void setOperation(CalculatorOperation operation) {
+        this.operation = operation;
     }
 
     public void calculate(int num1, int num2, CalculatorOperation operation){
@@ -67,5 +78,6 @@ public class Calculator {
     public void clear(){
         this.num1 = 0.0f;
         this.num2 = 0.0f;
+        this.operation = NONE;
     }
 }
