@@ -39,13 +39,7 @@ public class MainActivity extends AppCompatActivity {
         numericPadFragment.setOnDigitPressedListener(new NumericPadFragment.DigitPressed() {
             @Override
             public void onDigitPressed(String digit) {
-                if (resultText.getText().toString().indexOf(".") > 0) {
-                    if( digit.equals(".") ){
-                        printNumber("");
-                    }else{
-                        printNumber(digit);
-                    }
-                }
+                printNumber(digit);
             }
         });
 
@@ -151,6 +145,13 @@ public class MainActivity extends AppCompatActivity {
         if (resultText.getText().equals("0")){
             resultText.setText("");
         }
-        resultText.setText(resultText.getText() + i);
+        if( i.equals(".")) {
+            String actualText = resultText.getText().toString();
+            if (actualText.indexOf(".") < 0) {
+                resultText.setText(resultText.getText().toString() + ".");
+            }
+        }else {
+            resultText.setText(resultText.getText() + i);
+        }
     }
 }
