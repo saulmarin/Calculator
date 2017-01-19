@@ -15,18 +15,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.activity_main_result)TextView resultText;
 
-    @BindView(R.id.activity_main_number0)Button number0;
-    @BindView(R.id.activity_main_number1)Button number1;
-    @BindView(R.id.activity_main_number2)Button number2;
-    @BindView(R.id.activity_main_number3)Button number3;
-    @BindView(R.id.activity_main_number4)Button number4;
-    @BindView(R.id.activity_main_number5)Button number5;
-    @BindView(R.id.activity_main_number6)Button number6;
-    @BindView(R.id.activity_main_number7)Button number7;
-    @BindView(R.id.activity_main_number8)Button number8;
-    @BindView(R.id.activity_main_number9)Button number9;
+    @BindView(R.id.activity_main_result)TextView resultText;
 
     @BindView(R.id.activity_main_add)Button buttonAdd;
     @BindView(R.id.activity_main_substrac)Button buttonSubstrac;
@@ -37,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.activity_main_m_in)Button buttonMin;
     @BindView(R.id.activity_main_m_out)Button buttonMout;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
@@ -47,78 +35,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        NumericPadFragment numericPadFragment = (NumericPadFragment) getSupportFragmentManager().findFragmentById(R.id.numeric_pad_fragment);
+        numericPadFragment.setOnDigitPressedListener(new NumericPadFragment.DigitPressed() {
+            @Override
+            public void onDigitPressed(String digit) {
+                printNumber(digit);
+            }
+        });
+
         final Calculator calculator = new Calculator();
         calculator.clear();
         resultText.setText("0");
-
-        number0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("0");
-            }
-        });
-
-        number1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("1");
-            }
-        });
-
-        number2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("2");
-            }
-        });
-
-        number3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("3");
-            }
-        });
-
-        number4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("4");
-            }
-        });
-
-        number5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("5");
-            }
-        });
-
-        number6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("6");
-            }
-        });
-
-        number7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("7");
-            }
-        });
-
-        number8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("8");
-            }
-        });
-        number9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                printNumber("9");
-            }
-        });
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,6 +145,13 @@ public class MainActivity extends AppCompatActivity {
         if (resultText.getText().equals("0")){
             resultText.setText("");
         }
-        resultText.setText(resultText.getText() + i);
+        if( i.equals(".")) {
+            String actualText = resultText.getText().toString();
+            if (actualText.indexOf(".") < 0) {
+                resultText.setText(resultText.getText().toString() + ".");
+            }
+        }else {
+            resultText.setText(resultText.getText() + i);
+        }
     }
 }

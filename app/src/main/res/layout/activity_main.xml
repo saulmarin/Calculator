@@ -12,12 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Calculator v1.0"
+        android:text="Calculator v1.1"
         android:textColor="#FFF"
         android:textSize="22dp"
         android:textStyle="bold"
         android:gravity="center_vertical"
         android:paddingLeft="16dp"/>
+
+    <fragment
+        android:id="@+id/numeric_pad_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.marin.saul.calculator.NumericPadFragment"
+        tools:layout="@layout/fragment_numeric_pad"
+        android:layout_below="@+id/activity_main_m_in"/>
 
     <TextView
         android:id="@+id/activity_main_result"
@@ -56,93 +64,12 @@
 
     <Button
         android:textSize="22dp"
-        android:id="@+id/activity_main_number7"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_ce"
-        android:layout_marginLeft="18dp"
-        android:text="7"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number8"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_ce"
-        android:layout_toRightOf="@+id/activity_main_number7"
-        android:text="8"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number9"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_ce"
-        android:layout_toRightOf="@+id/activity_main_number8"
-        android:text="9"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number4"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_number7"
-        android:layout_marginLeft="18dp"
-        android:text="4"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number5"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_number8"
-        android:layout_toRightOf="@+id/activity_main_number7"
-        android:text="5"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number6"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_number9"
-        android:layout_toRightOf="@+id/activity_main_number8"
-        android:text="6"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number1"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_number4"
-        android:layout_marginLeft="18dp"
-        android:text="1"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number2"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_number5"
-        android:layout_toRightOf="@+id/activity_main_number1"
-        android:text="2"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number3"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_number6"
-        android:layout_toRightOf="@+id/activity_main_number2"
-        android:text="3"/>
-
-    <Button
-        android:textSize="22dp"
         android:id="@+id/activity_main_divide"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:text="/"
-        android:layout_below="@+id/activity_main_ce"
-        android:layout_toRightOf="@+id/activity_main_number9"/>
+        android:layout_below="@+id/activity_main_result"
+        android:layout_toRightOf="@+id/numeric_pad_fragment"/>
 
     <Button
         android:textSize="22dp"
@@ -151,7 +78,7 @@
         android:layout_height="70dp"
         android:text="x"
         android:layout_below="@+id/activity_main_divide"
-        android:layout_toRightOf="@+id/activity_main_number9"/>
+        android:layout_toRightOf="@+id/numeric_pad_fragment"/>
 
     <Button
         android:textSize="30dp"
@@ -160,7 +87,7 @@
         android:layout_height="70dp"
         android:text="-"
         android:layout_below="@+id/activity_main_multiply"
-        android:layout_toRightOf="@+id/activity_main_number9"/>
+        android:layout_toRightOf="@+id/numeric_pad_fragment"/>
 
     <Button
         android:textSize="22dp"
@@ -169,32 +96,23 @@
         android:layout_height="70dp"
         android:text="+"
         android:layout_below="@+id/activity_main_substrac"
-        android:layout_toRightOf="@+id/activity_main_number9"/>
-
-    <Button
-        android:textSize="22dp"
-        android:id="@+id/activity_main_number0"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_number1"
-        android:layout_marginLeft="18dp"
-        android:text="0"/>
+        android:layout_toRightOf="@+id/numeric_pad_fragment"/>
 
     <Button
         android:textSize="22dp"
         android:id="@+id/activity_main_equal"
         android:layout_width="140dp"
         android:layout_height="70dp"
-        android:layout_below="@+id/activity_main_number2"
-        android:layout_toRightOf="@+id/activity_main_number0"
+        android:layout_below="@+id/activity_main_add"
+        android:layout_alignRight="@id/activity_main_divide"
         android:text="="/>
 
     <Button
         android:textSize="22dp"
         android:id="@+id/activity_main_ce"
-        android:layout_width="140dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_below="@+id/activity_main_result"
         android:text="CE"
-        android:layout_toRightOf="@+id/activity_main_number8"/>
+        android:layout_toRightOf="@+id/activity_main_m_out"/>
 </RelativeLayout>
